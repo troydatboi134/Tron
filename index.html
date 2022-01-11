@@ -10,7 +10,51 @@
 
   <body>
 <script>
-  document.body.classList.remove("stop-scrolling");
+  var objImage= null;
+
+            function getKeyAndMove(e){
+
+            var idtestor = document.getElementById('idPlacer2').value; 
+                objImage=  document.getElementById(idtestor);               
+                objImage.style.position='relative';
+
+
+                var key_code=e.which||e.keyCode;
+                switch(key_code){
+                    case 37: //left arrow key
+                        moveLeft();
+e.preventDefault(); 
+                        break;
+                    case 38: //Up arrow key
+                        moveUp();
+e.preventDefault(); break;
+                        break;
+                    case 39: //right arrow key
+                        moveRight();
+e.preventDefault(); 
+                        break;
+                    case 40: //down arrow key
+                        moveDown();
+e.preventDefault(); break;
+                        break;                      
+                }
+            }
+            function moveLeft(){
+                objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+window.scrollBy(-5, 0);
+            }
+            function moveUp(){
+                objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+window.scrollBy(0, -5);
+            }
+            function moveRight(){
+                objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+window.scrollBy(5, 0);
+            }k`a`
+            function moveDown(){
+                objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+window.scrollBy(0, 5);
+            }
     </script>
     <div class="tron-logo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/TRON.png" />
